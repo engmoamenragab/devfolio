@@ -1,12 +1,17 @@
-$(document).ready(function ($) {
+$(document).ready(function () {
   "use strict";
 
-  // Preloader
+  // preloader
   $(window).on("load", function () {
     $("#preloader").delay(600).fadeOut();
   });
 
-  // Sticky Nav
+  // navbar active state
+  $(".navbar-nav li.nav-item").on("click", function () {
+    $(this).addClass("active").siblings().removeClass("active");
+  });
+
+  // sticky nav
   $(window).scroll(function () {
     if ($(this).scrollTop() > 20) {
       $("#nav").addClass("bg-white");
@@ -19,11 +24,18 @@ $(document).ready(function ($) {
 
   // navbar toggler
   $(".navbar-toggler").click(function () {
-    $("#nav").toggleClass("bg-white");
-    $("#nav a").toggleClass("text-primary");
+    if ($(window).scrollTop() <= 20) {
+      if ($("#nav").attr('class').indexOf("bg-white") == -1) {
+        $("#nav").addClass("bg-white");
+        $("#nav a").addClass("text-primary");
+      } else {
+        $("#nav").removeClass("bg-white");
+        $("#nav a").removeClass("text-primary");
+      }
+    }
   });
 
-  // Go Top Button
+  // go top button
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
       $("#go-top").fadeIn();

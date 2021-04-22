@@ -57,6 +57,9 @@ header .navbar .navbar-nav .nav-item .nav-link::after {
   bottom: 0;
   transition: all 500ms ease;
 }
+header .navbar.bg-white .navbar-nav .nav-item .nav-link::after {
+  background-color: #007bff;
+}
 header .navbar .navbar-nav .nav-item .nav-link:hover::after {
   width: 35px;
 }
@@ -66,7 +69,6 @@ header .navbar .navbar-nav .nav-item .nav-link:hover::after {
   }
 }
 header .navbar .navbar-nav .nav-item.active .nav-link {
-  color: #0078ff;
   position: relative;
 }
 header .navbar .navbar-nav .nav-item.active .nav-link::after {
@@ -79,6 +81,9 @@ header .navbar .navbar-nav .nav-item.active .nav-link::after {
   left: 0;
   bottom: 0;
   transition: all 500ms ease;
+}
+header .navbar.bg-white .navbar-nav .nav-item.active .nav-link::after {
+  background-color: #007bff;
 }
 @media (min-width: 768px) {
   header .navbar .navbar-nav .nav-item.active .nav-link::after {
