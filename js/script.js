@@ -1,17 +1,14 @@
 $(document).ready(function () {
   "use strict";
-
-  // preloader
+  //ANCHOR preloader
   $(window).on("load", function () {
     $("#preloader").delay(600).fadeOut();
   });
-
   // navbar active state
   $(".navbar-nav li.nav-item").on("click", function () {
     $(this).addClass("active").siblings().removeClass("active");
   });
-
-  // sticky nav
+  //ANCHOR sticky nav
   $(window).scroll(function () {
     if ($(this).scrollTop() > 20) {
       $("#nav").addClass("bg-white");
@@ -21,8 +18,7 @@ $(document).ready(function () {
       $("#nav a").removeClass("text-primary");
     }
   });
-
-  // navbar toggler
+  //ANCHOR navbar toggler
   $(".navbar-toggler").click(function () {
     if ($(window).scrollTop() <= 20) {
       if ($("#nav").attr('class').indexOf("bg-white") == -1) {
@@ -34,8 +30,7 @@ $(document).ready(function () {
       }
     }
   });
-
-  // go top button
+  //ANCHOR go top button
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
       $("#go-top").fadeIn();
